@@ -11,25 +11,26 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 #include <map>
+#include <string>
 
-class BitcoinExchange{
-    private:
-        std::string _filename;
-        std::map<std::string, float> _rates;
+class BitcoinExchange {
+private:
+  std::string _filename;
+  std::map<std::string, float> _rates;
 
-        void isValid(std::string date);
-        void parseValues();
+  void isValid(std::string date);
+  void parseValues();
 
-    public:
-        // Constructors and Destructors
-        BitcoinExchange() = delete;
-        BitcoinExchange(std::string &date);
-        BitcoinExchange(const BitcoinExchange &copy);
-        BitcoinExchange &operator=(const BitcoinExchange &copy);
-        ~BitcoinExchange();
+public:
+  // Constructors and Destructors
+  BitcoinExchange();
+  BitcoinExchange(std::string &filename);
+  BitcoinExchange(const BitcoinExchange &copy);
+  BitcoinExchange &operator=(const BitcoinExchange &copy);
+  ~BitcoinExchange();
 
-        // Helper functions
-        float get_rates(std::string &date);
+  // Helper functions
+  float get_rates(std::string &date);
+  void print_map();
 };

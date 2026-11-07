@@ -13,12 +13,10 @@
 #include "BitcoinExchange.hpp"
 #include "utils.hpp"
 
-int main (int argc, char **argv)
-{
-    if (argc < 1)
-        return (-1);
+int main(void) {
+  // fileprint(argv[1]);
+  BitcoinExchange btc;
+  btc.print_map();
 
-    fileprint(argv[1]);
-
-    return (0);
+  return (0);
 }
