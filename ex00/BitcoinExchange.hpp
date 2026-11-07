@@ -16,11 +16,20 @@
 
 class BitcoinExchange{
     private:
-        std::map<std::string, double> _rates;
+        std::string _filename;
+        std::map<std::string, float> _rates;
 
         void isValid(std::string date);
-        void parseValue(std::string date);
+        void parseValues();
 
     public:
-        float get_rates(std::string date);
+        // Constructors and Destructors
+        BitcoinExchange() = delete;
+        BitcoinExchange(std::string &date);
+        BitcoinExchange(const BitcoinExchange &copy);
+        BitcoinExchange &operator=(const BitcoinExchange &copy);
+        ~BitcoinExchange();
+
+        // Helper functions
+        float get_rates(std::string &date);
 };
